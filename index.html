@@ -1,0 +1,229 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Weather Wiki：認識台灣常見天氣現象、氣象原理與氣候知識。">
+    <title>Weather Wiki | 天氣知識百科</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container header-inner">
+        <a href="index.html" class="logo">
+            <span class="logo-icon">W</span>
+            <span>Weather Wiki</span>
+        </a>
+
+        <nav class="main-nav">
+            <a href="index.html" class="active">首頁</a>
+            <a href="categories/index.html">知識分類</a>
+            <a href="explore/index.html">知識探索</a>
+            <a href="sources/index.html">資料來源</a>
+        </nav>
+
+        <button class="menu-toggle" id="menuToggle"
+                aria-label="開啟導覽選單">☰</button>
+    </div>
+</header>
+
+<main>
+
+    <!-- Hero 主視覺 -->
+    <section class="hero">
+        <div class="hero-background">
+            <div class="hero-cloud cloud-one"></div>
+            <div class="hero-cloud cloud-two"></div>
+            <div class="hero-sun"></div>
+        </div>
+
+        <div class="container hero-content">
+            <span class="eyebrow">WEATHER KNOWLEDGE ENCYCLOPEDIA</span>
+
+            <h1>探索天氣背後的<br>自然科學</h1>
+
+            <p>
+                從日常天氣現象到大氣運作原理，
+                帶你認識台灣的天氣與氣候。
+            </p>
+
+            <form class="search-box" id="searchForm">
+                <input
+                    type="search"
+                    id="siteSearch"
+                    placeholder="搜尋天氣知識，例如：颱風、梅雨、氣壓..."
+                    aria-label="搜尋天氣知識"
+                >
+                <button type="submit">搜尋</button>
+            </form>
+
+            <div class="search-hint">
+                熱門主題：
+                <a href="articles/typhoon.html">颱風</a>
+                <a href="articles/rainfall.html">降雨</a>
+                <a href="articles/clouds.html">雲的形成</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 搜尋結果 -->
+    <section class="container search-results" id="searchResults"
+             hidden>
+        <div class="section-heading">
+            <div>
+                <span class="eyebrow">SEARCH</span>
+                <h2>搜尋結果</h2>
+            </div>
+            <button class="text-button" id="clearSearch">清除搜尋</button>
+        </div>
+        <div class="article-grid" id="searchResultList"></div>
+        <p id="noSearchResult" class="empty-message" hidden>
+            找不到符合的文章，請嘗試其他關鍵字。
+        </p>
+    </section>
+
+    <!-- 知識分類 -->
+    <section class="section container" id="categories">
+        <div class="section-heading">
+            <div>
+                <span class="eyebrow">KNOWLEDGE CATEGORIES</span>
+                <h2>知識分類</h2>
+                <p>從不同角度認識天氣與氣象科學。</p>
+            </div>
+            <a href="categories/index.html" class="text-link">
+                查看全部分類 →
+            </a>
+        </div>
+
+        <div class="category-grid">
+            <a href="categories/basic.html" class="category-card">
+                <span class="category-number">01</span>
+                <div class="category-icon">🌤️</div>
+                <h3>氣象基礎知識</h3>
+                <p>認識大氣、氣壓、濕度、雲與降水等基本原理。</p>
+                <span class="card-link">探索分類 →</span>
+            </a>
+
+            <a href="categories/climate.html" class="category-card">
+                <span class="category-number">02</span>
+                <div class="category-icon">🌏</div>
+                <h3>台灣氣候與天氣系統</h3>
+                <p>了解季風、氣團、鋒面及台灣氣候特徵。</p>
+                <span class="card-link">探索分類 →</span>
+            </a>
+
+            <a href="categories/phenomena.html" class="category-card">
+                <span class="category-number">03</span>
+                <div class="category-icon">🌧️</div>
+                <h3>常見天氣現象</h3>
+                <p>探索晴天、降雨、雷雨、颱風與其他現象。</p>
+                <span class="card-link">探索分類 →</span>
+            </a>
+
+            <a href="categories/disasters.html" class="category-card">
+                <span class="category-number">04</span>
+                <div class="category-icon">⛈️</div>
+                <h3>極端天氣與災害</h3>
+                <p>認識豪雨、乾旱、熱浪及低溫等天氣災害。</p>
+                <span class="card-link">探索分類 →</span>
+            </a>
+
+            <a href="categories/observation.html" class="category-card">
+                <span class="category-number">05</span>
+                <div class="category-icon">🛰️</div>
+                <h3>氣象觀測與預報</h3>
+                <p>了解氣象設備、衛星、雷達與天氣預報原理。</p>
+                <span class="card-link">探索分類 →</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- 精選文章 -->
+    <section class="section featured-section">
+        <div class="container">
+            <div class="section-heading">
+                <div>
+                    <span class="eyebrow">FEATURED ARTICLES</span>
+                    <h2>精選天氣知識</h2>
+                    <p>從重要的氣象概念開始，逐步建立完整知識。</p>
+                </div>
+                <a href="categories/index.html" class="text-link">
+                    瀏覽所有文章 →
+                </a>
+            </div>
+
+            <div class="article-grid" id="featuredArticles">
+                <!-- 由 main.js 載入文章卡片 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 知識探索 -->
+    <section class="section container">
+        <div class="explore-banner">
+            <div class="explore-content">
+                <span class="eyebrow">KNOWLEDGE EXPLORATION</span>
+                <h2>天氣知識彼此相連</h2>
+                <p>
+                    從水氣與濕度，到雲的形成與降雨，
+                    探索不同氣象概念之間的關係。
+                </p>
+                <a href="explore/index.html" class="primary-button">
+                    開始探索 →
+                </a>
+            </div>
+
+            <div class="explore-visual">
+                <div class="relation-node node-one">水氣</div>
+                <div class="relation-node node-two">雲</div>
+                <div class="relation-node node-three">降雨</div>
+                <div class="relation-line line-one"></div>
+                <div class="relation-line line-two"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 網站介紹 -->
+    <section class="section container about-section">
+        <div>
+            <span class="eyebrow">ABOUT WEATHER WIKI</span>
+            <h2>用科學理解天氣</h2>
+        </div>
+        <div class="about-text">
+            <p>
+                Weather Wiki 是以台灣常見天氣現象與氣象知識為主題的
+                知識百科網站，整理氣象原理、台灣氣候、天氣現象及
+                氣象觀測等內容，協助讀者建立有系統的氣象知識。
+            </p>
+            <p class="muted">
+                本網站以知識介紹為主，不提供即時天氣預報。
+                文章內容將盡可能附上官方資料來源，方便讀者進一步查閱。
+            </p>
+        </div>
+    </section>
+
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <div>
+            <a href="index.html" class="footer-logo">Weather Wiki</a>
+            <p>探索天氣現象，理解自然科學。</p>
+        </div>
+        <div class="footer-links">
+            <a href="categories/index.html">知識分類</a>
+            <a href="explore/index.html">知識探索</a>
+            <a href="sources/index.html">資料來源</a>
+        </div>
+    </div>
+    <div class="container footer-bottom">
+        <span>Weather Wiki</span>
+        <span>© 2026 Weather Wiki. Knowledge for everyone.</span>
+    </div>
+</footer>
+
+</body>
+</html>
